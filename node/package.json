@@ -1,0 +1,33 @@
+{
+  "name": "blingsox-node",
+  "version": "0.0.0",
+  "description": "Slingbox controller over REST API.",
+  "private": true,
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Nomkid/blingsox.git"
+  },
+  "author": "Nomkid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nomkid/blingsox/issues"
+  },
+  "homepage": "https://github.com/Nomkid/blingsox#readme",
+  "devDependencies": {
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "eslint": "^8.27.0",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.0.11",
+    "h3": "^0.8.6",
+    "minimist": "^1.2.7",
+    "ohmyfetch": "^0.4.21"
+  }
+}

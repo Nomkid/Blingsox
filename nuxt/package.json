@@ -1,0 +1,33 @@
+{
+  "name": "blingsox-web",
+  "version": "0.0.0",
+  "description": "A modern web client for Blingsox.",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Nomkid/blingsox.git"
+  },
+  "author": "Nomkid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nomkid/blingsox/issues"
+  },
+  "homepage": "https://github.com/Nomkid/blingsox#readme",
+  "devDependencies": {
+    "@vueuse/core": "^9.5.0",
+    "@vueuse/nuxt": "^9.5.0",
+    "nuxt": "3.0.0-rc.13",
+    "vite-plugin-vuetify": "^1.0.0"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.0.96",
+    "vuetify": "^3.0.0"
+  }
+}

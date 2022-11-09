@@ -1,0 +1,23 @@
+{
+  "name": "blingsox",
+  "version": "0.0.0",
+  "description": "Modern Slingbox client.",
+  "scripts": {
+    "build": "npm run build -w node && npm run build -w nuxt",
+    "start": "node ./node/.output/index.js & node ./nuxt/.output/server/index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Nomkid/blingsox.git"
+  },
+  "author": "Nomkid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nomkid/blingsox/issues"
+  },
+  "homepage": "https://github.com/Nomkid/blingsox#readme",
+  "workspaces": [
+    "node",
+    "nuxt"
+  ]
+}

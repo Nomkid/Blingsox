@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+      "module": "CommonJS",
+      "moduleResolution": "Node",
+      "target": "ES2020",
+      "strict": true,
+      "esModuleInterop": true,
+      "removeComments": true,
+      "skipLibCheck": true,
+      "outDir": ".output"
+  },
+  "include": [
+      "src/**/*"
+  ],
+  "exclude": [
+      "node_modules",
+      "**/node_modules/*"
+  ]
+}
