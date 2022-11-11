@@ -7,7 +7,7 @@ interface BinaryBoxInfo {
     finderId: string;
 }
 
-export function findSlingboxes(timeout = 2000) {
+export function findSlingboxes(timeout = 2000): Promise<BinaryBoxInfo[]> {
     return new Promise((resolve, reject) => {
         const message = new Uint8Array([0x01, 0x01, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00,
             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,

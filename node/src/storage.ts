@@ -1,32 +1,18 @@
 import jetpack from 'fs-jetpack';
+import { BoxConfig } from './sling/box';
 
 export const boxesDir = jetpack.dir('./.blingsox/boxes');
 export const streamsDir = jetpack.dir('./.blingsox/.streams');
 export const cacheDir = jetpack.dir('./.blingsox/.cache');
 
-interface BoxConfig {
-    finderId: string;
-    adminPassword: string;
-    host?: string;
-    port?: number;
-
-    deviceInfo?: {
-        name: string;
-        productId: string;
-        irblasterId: string;
-        hwVersion: string;
-        fwVersion: string;
-        fwDate: string;
-        macAddress: string;
-
-        inputs: {
-            id: number;
-            type: string;
-        }[];
+interface ConfigList {
+    [key: string]: {
+        filename: string;
+        config: BoxConfig;
     }
 }
 
-export const boxes: Record<string, BoxConfig> = {};
+export const boxes: ConfigList = {};
 
 export function importBoxes() {
     const filenames = boxesDir.list();
@@ -35,11 +21,19 @@ export function importBoxes() {
     for (const filename of filenames) {
         if (filename.endsWith('.box.json')) {
             const config = boxesDir.read(filename, 'json');
-            boxes[config.finderId] = config;
+            boxes[config.finderId] = { filename, config };
         }
     }
 }
 
-export function updateBox(config: BoxConfig) {
-    boxes[config.finderId] = config;
+export function serialize(config: BoxConfig) {
+    if (config.finderId in boxes) {
+        boxes[config.finderId].config = config;
+    } else {
+        boxes[config.finderId] = {
+            config,
+            filename: `${config.blingsox.name.replace(/ /g, '-')}.box.json`
+        };
+    }
+    boxesDir.write(boxes[config.finderId].filename, config);
 }
